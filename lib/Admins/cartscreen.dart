@@ -3,7 +3,8 @@ import 'package:e_shop/provider/productProvider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../GooglemAP.dart';
+
+import '../Ghome.dart';
 import 'HomePage.dart';
 import 'cartSingleProduct.dart';
 import 'checkOut.dart';

@@ -13,22 +13,30 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'Authentication/authenication.dart';
 import 'Authentication/login.dart';
-import 'Com/cartItem.dart';
-import 'Com/cart_screen.dart';
-import 'Com/getMain.dart';
+
 import 'Counters/ItemQuantity.dart';
 import 'Counters/changeAddresss.dart';
 import 'Counters/totalMoney.dart';
+import 'Widgets/theme.dart';
+
+
+
+
 
 Future<void> main() async
 {
-  WidgetsFlutterBinding.ensureInitialized();
 
+  WidgetsFlutterBinding.ensureInitialized();
   EcommerceApp.auth = FirebaseAuth.instance;
+
   EcommerceApp.sharedPreferences = await SharedPreferences.getInstance();
   EcommerceApp.firestore = Firestore.instance;
+
   runApp(MyApp());
+
+
 }
+
 
 
 class MyApp extends StatelessWidget {
@@ -48,10 +56,11 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Clothify',
         debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-            primaryColor: Colors.greenAccent
-        ),
+
         home: AuthenticScreen(),
+        themeMode: ThemeMode.light,
+        darkTheme: MyTheme.darkTheme(context),
+        theme:  MyTheme.lightTheme(context),
       ),
     );
   }
@@ -78,20 +87,6 @@ class _SplashScreenState extends State<SplashScreen> {
       body: Stack(
         fit: StackFit.expand,
         children: <Widget>[
-          Container(
-
-            // decoration: BoxDecoration(
-            //   gradient: LinearGradient(
-            //     colors: [Colors.pincolor: Colors.greenAccent,k,
-            //       Colors.greenAccent],
-            //     begin: const FractionalOffset(0.0, 0.0),
-            //     end: const FractionalOffset(1.0, 0.0),
-            //     stops: [0.0, 1.0],
-            //     tileMode: TileMode.clamp,
-            //   ),
-            //
-            // ),
-          ),
           Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
@@ -143,6 +138,7 @@ class _SplashScreenState extends State<SplashScreen> {
                       height: 10.0,
                     )
                   ],
+
                 ),
               )
             ],

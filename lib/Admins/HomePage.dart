@@ -8,25 +8,21 @@ import 'package:provider/provider.dart';
 
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-
-
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
-
 import 'List.dart';
 import 'SearchCatgeory.dart';
 import 'SingleProduct.dart';
 import 'detailScreen.dart';
 import 'notification_button.dart';
 class HomePage extends StatefulWidget {
- // const HomePage({Key? key}) : super(key: key);
 
   @override
   _HomePageState createState() => _HomePageState();
 }
+
+
 
 
 
@@ -45,8 +41,12 @@ CategoryProvider  provider;
 ProductProvider productProvider;
 
 
+
+
+
+
 class _HomePageState extends State<HomePage> {
-  Widget _buildCategoryFeatured(String image){
+  Widget _buildCategoryFeatured(String      image){
     return CircleAvatar(
       maxRadius: 35,
       backgroundColor: Color(0xff33dcfd),
@@ -206,7 +206,6 @@ Widget _buildFeature(BuildContext context){
                               price: e.price,
                               name: e.name,
                               brand: e.brand,
-
                             ),
                           ),
                         );
@@ -440,7 +439,6 @@ key: _key,
     ),
         drawer: MyDrawer(),
       body: Container(
-
                     height: double.infinity,
                     margin: EdgeInsets.symmetric(horizontal: 20),
                     child: ListView(

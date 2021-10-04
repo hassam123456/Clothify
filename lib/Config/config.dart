@@ -17,11 +17,14 @@ class EcommerceApp
    static String userCartList = 'userCart';
    static String subCollectionAddress = 'userAddress';
 
+
    static final String userName = 'name';
    static final String userEmail = 'email';
    static final String userPhotoUrl = 'photoUrl';
    static final String userUID = 'uid';
    static final String userAvatarUrl = 'url';
+
+
 
    static final String addressID = 'addressID';
    static final String totalAmount = 'totalAmount';

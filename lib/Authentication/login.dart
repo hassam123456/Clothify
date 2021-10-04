@@ -12,16 +12,27 @@ import 'package:flutter/material.dart';
 import 'package:e_shop/Config/config.dart';
 
 
+
+
 class Login extends StatefulWidget {
+
   @override
   _LoginState createState() => _LoginState();
 }
 
 class _LoginState extends State<Login>
 {
+
+
+
+
   final TextEditingController _emailtextEditingController = TextEditingController();
   final TextEditingController _passwordtextEditingController = TextEditingController();
   final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
+
+
+
+
   @override
   Widget build(BuildContext context) {
     double _screenWidth = MediaQuery.of(context).size.width,
@@ -136,6 +147,7 @@ class _LoginState extends State<Login>
       });
     }
   }
+
   Future readData(FirebaseUser fUser) async{
     Firestore.instance.collection("user").document(fUser.uid).get().then((dataSnapshot) async{
       await EcommerceApp.sharedPreferences.setString("uid", dataSnapshot.data[EcommerceApp.userUID]);
